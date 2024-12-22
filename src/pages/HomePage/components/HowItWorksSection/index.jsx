@@ -43,7 +43,7 @@ const HowItWorksSection = () => {
 
 const HowItWorksContainer = styled.section`
   padding: 60px 20px;
-  background-color: #ffffff;
+  background-color: #f9fafc;
   text-align: center;
   display: flex;
   justify-content: center;

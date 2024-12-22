@@ -70,7 +70,7 @@ const moveInBottom = keyframes`
 
 const HeroSection = styled.div`
   height: 100vh;
-  background-color: #ffffff;
+  background-color:#f9fafc;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -114,7 +114,7 @@ const StyledSlider = styled(Slider)`
 
 
 const TestimonialsContainer = styled.section`
-  padding: 100px 20px;
+  padding: 80px 20px;
   background-color: #f9c935;
   text-align: center;
   display: flex;
@@ -127,11 +127,13 @@ const ContentWrapper = styled.div`
 `;
 
 const SectionTitle = styled.h2`
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #000;
-  margin-bottom: 50px;
-  line-height: 1.3;
+  font-size: 3rem;
+  margin-bottom: 40px;
+  color: #fff;
+  font-weight: bold;
+  span {
+    color: #000;
+  }
 `;
 
 const Highlight = styled.span`
@@ -171,20 +173,20 @@ const UserDetails = styled.div`
 `;
 
 const UserName = styled.h3`
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: #000;
   margin: 0;
 `;
 
 const UserRole = styled.p`
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   color: #777;
   margin: 0;
 `;
 
 const TestimonialText = styled.p`
-  font-size: 1rem;
+  font-size: 1.4rem;
   color: #555;
   font-style: italic;
   line-height: 1.6;
@@ -195,7 +197,7 @@ const Footer = styled.div`
 `;
 
 const Rating = styled.div`
-  font-size: 1.1rem;
+  font-size: 1.6rem;
   color: #f39c12;
   font-weight: bold;
 `;
