@@ -4,6 +4,10 @@ import styled from "styled-components";
 import { FaFacebookF, FaInstagram, FaXTwitter, FaYoutube } from "react-icons/fa6";
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    
+  };
   return (
     <FooterContainer>
       <FooterInnerContainer>
@@ -27,14 +31,14 @@ const Footer = () => {
             <SocialLinksHeading>Links</SocialLinksHeading>
             <LinksGrid>
               <Column>
-                <StyledLink to="/">Home</StyledLink>
-                <StyledLink to="/about">About</StyledLink>
-                <StyledLink to="/services">Services</StyledLink>
-                <StyledLink to="/contact">Contact</StyledLink>
+                <StyledLink to="/" onClick={scrollToTop}>Home</StyledLink>
+                <StyledLink to="/about" onClick={scrollToTop}>About</StyledLink>
+                <StyledLink to="/services" onClick={scrollToTop}>Services</StyledLink>
+                <StyledLink to="/contact" onClick={scrollToTop}>Contact</StyledLink>
               </Column>
               <Column>
-                <StyledLink to="/">Privacy Policy</StyledLink>
-                <StyledLink to="/about">Terms & Conditions</StyledLink>
+                <StyledLink to="/" onClick={scrollToTop}>Privacy Policy</StyledLink>
+                <StyledLink to="/" onClick={scrollToTop}>Terms & Conditions</StyledLink>
               </Column>
             </LinksGrid>
           </Block>

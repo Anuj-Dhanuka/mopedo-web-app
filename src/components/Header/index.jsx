@@ -6,6 +6,10 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
   };
@@ -13,7 +17,7 @@ function Header() {
   return (
     <HeaderContainer>
       <HeaderInnerContainer>
-        <LogoLink to={"/"}>
+        <LogoLink to={"/"} onClick={scrollToTop}>
           <Logo>Mopedo</Logo>
         </LogoLink>
 
@@ -26,29 +30,38 @@ function Header() {
           <StyledLink
             to="/"
             $isActive={location.pathname === "/"}
-            onClick={() => setMenuOpen(false)}
+            onClick={() => {
+              setMenuOpen(false);
+              scrollToTop();
+            }}
           >
             Home
           </StyledLink>
           <StyledLink
             to="/about"
             $isActive={location.pathname === "/about"}
-            onClick={() => setMenuOpen(false)}
-          >
+            onClick={() => {
+              setMenuOpen(false);
+              scrollToTop();
+            }}          >
             About
           </StyledLink>
           <StyledLink
             to="/services"
             $isActive={location.pathname === "/services"}
-            onClick={() => setMenuOpen(false)}
-          >
+            onClick={() => {
+              setMenuOpen(false);
+              scrollToTop();
+            }}          >
             Services
           </StyledLink>
           <StyledLink
             to="/contact"
             $isActive={location.pathname === "/contact"}
-            onClick={() => setMenuOpen(false)}
-          >
+            onClick={() => {
+              setMenuOpen(false);
+              scrollToTop();
+            }}          >
             Contact
           </StyledLink>
         </Nav>
