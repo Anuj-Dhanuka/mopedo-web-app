@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { useState } from "react";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
@@ -12,23 +13,42 @@ function Header() {
   return (
     <HeaderContainer>
       <HeaderInnerContainer>
-        <Logo>Mopedo</Logo>
+        <LogoLink to={"/"}>
+          <Logo>Mopedo</Logo>
+        </LogoLink>
+
         <MenuButton onClick={toggleMenu}>
           <span />
           <span />
           <span />
         </MenuButton>
         <Nav $menuOpen={menuOpen}>
-          <StyledLink to="/" onClick={() => setMenuOpen(false)}>
+          <StyledLink
+            to="/"
+            $isActive={location.pathname === "/"}
+            onClick={() => setMenuOpen(false)}
+          >
             Home
           </StyledLink>
-          <StyledLink to="/about" onClick={() => setMenuOpen(false)}>
+          <StyledLink
+            to="/about"
+            $isActive={location.pathname === "/about"}
+            onClick={() => setMenuOpen(false)}
+          >
             About
           </StyledLink>
-          <StyledLink to="/services" onClick={() => setMenuOpen(false)}>
+          <StyledLink
+            to="/services"
+            $isActive={location.pathname === "/services"}
+            onClick={() => setMenuOpen(false)}
+          >
             Services
           </StyledLink>
-          <StyledLink to="/contact" onClick={() => setMenuOpen(false)}>
+          <StyledLink
+            to="/contact"
+            $isActive={location.pathname === "/contact"}
+            onClick={() => setMenuOpen(false)}
+          >
             Contact
           </StyledLink>
         </Nav>
@@ -59,6 +79,10 @@ const HeaderInnerContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+`;
+
+const LogoLink = styled(Link)`
+  text-decoration: none;
 `;
 
 const Logo = styled.h1`
@@ -109,7 +133,7 @@ const Nav = styled.nav`
 
 const StyledLink = styled(Link)`
   margin: 0 1rem;
-  color: #000;
+  color: ${({ $isActive }) => ($isActive ? "#f9c935" : "#000")};
   text-decoration: none;
   font-size: 1.6rem;
   position: relative;
@@ -120,9 +144,9 @@ const StyledLink = styled(Link)`
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 0;
+    width: ${({ $isActive }) => ($isActive ? "100%" : "0")};
     height: 2px;
-    background-color: #000;
+    background-color: #f9c935;
     transition: width 0.3s ease-in-out;
   }
 
