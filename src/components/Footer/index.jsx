@@ -1,12 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaXTwitter,
-  FaYoutube,
-} from "react-icons/fa6";
+import { FaFacebookF, FaInstagram, FaXTwitter, FaYoutube } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -21,29 +16,27 @@ const Footer = () => {
               <p>Hyderabad - 500081</p>
             </Address>
             <EmailHeading>
-              email:{" "}
+              Email:{" "}
               <span>
-                <Email href="mailto:example@example.com">
-                  dhanush@mopedo.com
-                </Email>
+                <Email href="mailto:dhanush@mopedo.com">dhanush@mopedo.com</Email>
               </span>
             </EmailHeading>
           </Block>
 
           <Block>
             <SocialLinksHeading>Links</SocialLinksHeading>
-            <NavContainer>
-              <Nav>
+            <LinksGrid>
+              <Column>
                 <StyledLink to="/">Home</StyledLink>
                 <StyledLink to="/about">About</StyledLink>
                 <StyledLink to="/services">Services</StyledLink>
                 <StyledLink to="/contact">Contact</StyledLink>
-              </Nav>
-              <Nav>
-                <StyledLink to="/">Privacy policy</StyledLink>
-                <StyledLink to="/about">Terms & conditions</StyledLink>
-              </Nav>
-            </NavContainer>
+              </Column>
+              <Column>
+                <StyledLink to="/">Privacy Policy</StyledLink>
+                <StyledLink to="/about">Terms & Conditions</StyledLink>
+              </Column>
+            </LinksGrid>
           </Block>
 
           <Block>
@@ -79,7 +72,7 @@ const Footer = () => {
               </SocialMediaALink>
             </SocialmediaIconsContainer>
             <SocialMediaDescription>
-              Follow us to get more details and up to date
+              Follow us for updates and more details.
             </SocialMediaDescription>
           </Block>
         </BlocksContainer>
@@ -97,32 +90,26 @@ const FooterContainer = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 60px 0;
+  padding: 60px 20px;
+  box-sizing: border-box;
 `;
 
 const FooterInnerContainer = styled.div`
   width: 100%;
-  height: 100%;
   max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const BlocksContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
-  }
+  width: 100%;
 `;
 
 const Block = styled.div`
-  width: 30%;
-  height: 100%;
   color: #fff;
 `;
 
@@ -145,22 +132,24 @@ const EmailHeading = styled.p`
 
 const Email = styled.a`
   text-decoration: none;
-  display: inline;
   color: #fff;
 `;
 
-const NavContainer = styled.div`
-  display: flex;
-  align-items: flex-start;
+const LinksGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Always 2 columns */
+  gap: 10px;
+
+  @media (max-width: 480px) {
+    grid-template-columns: repeat(2, minmax(120px, 1fr)); /* Force 2 columns, even on small devices */
+    gap: 0px;
+  }
 `;
 
-const Nav = styled.nav`
-  height: 100%;
+const Column = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  width: 50%;
+  gap: 8px;
 `;
 
 const SocialLinksHeading = styled.h2`
@@ -169,15 +158,8 @@ const SocialLinksHeading = styled.h2`
   text-decoration: underline;
 `;
 
-const SocialMediaDescription = styled.p`
-  font-size: 1.6rem;
-  margin-top: 16px;
-`;
-
 const SocialmediaIconsContainer = styled.div`
   display: flex;
-  flex-direction: row;
-  align-items: center;
   gap: 20px;
 `;
 
@@ -195,14 +177,14 @@ const SocialMediaALink = styled.a`
   }
 `;
 
-
-
 const StyledLink = styled(Link)`
+  display: inline-flex;
+  max-width: max-content; 
   color: #fff;
   text-decoration: none;
   font-size: 1.5rem;
-  position: relative;
   padding-bottom: 5px;
+  position: relative;
   display: inline;
 
   &::after {
@@ -221,9 +203,16 @@ const StyledLink = styled(Link)`
   }
 `;
 
+const SocialMediaDescription = styled.p`
+  font-size: 1.6rem;
+  margin-top: 16px;
+`;
+
 const RightReserved = styled.p`
   margin-top: 36px;
   font-size: 1.4rem;
+  text-align: left;
+  color: #fff;
 `;
 
 export default Footer;

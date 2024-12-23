@@ -8,8 +8,7 @@ const ComingSoonSection = () => {
           <span>Coming Soon</span> to Your City
         </SectionTitle>
         <ComingSoonDescription>
-          We&apos;re expanding rapidly to bring Mopido&apos;s seamless
-          experience to more cities
+          We&lsquo;re expanding rapidly to bring Mopido&apos;s seamless experience to more cities.
         </ComingSoonDescription>
         <NotificationText>
           Be the first to know when we launch in your city!
@@ -26,6 +25,14 @@ const ComingSoonContainer = styled.section`
   text-align: center;
   display: flex;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    padding: 36px 20px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 36px 20px;
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -45,6 +52,14 @@ const SectionTitle = styled.h2`
   span {
     color: #000;
   }
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2rem;
+  }
 `;
 
 const ComingSoonDescription = styled.p`
@@ -53,12 +68,28 @@ const ComingSoonDescription = styled.p`
   line-height: 1.6;
   max-width: 800px;
   margin-top: 0px;
+
+  @media (max-width: 768px) {
+    font-size: 1.3rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.1rem;
+  }
 `;
 
 const NotificationText = styled.p`
   font-size: 1.5rem;
   margin-bottom: 16px;
   color: #333333;
+
+  @media (max-width: 768px) {
+    font-size: 1.3rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.1rem;
+  }
 `;
 
 const NotificationButton = styled.button`
@@ -72,8 +103,22 @@ const NotificationButton = styled.button`
   font-weight: 500;
   border-radius: 8px;
   cursor: pointer;
+  transition: background 0.3s ease;
+
   &:hover {
     background: #272324;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+    width: 150px;
+    height: 45px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+    width: 140px;
+    height: 40px;
   }
 `;
 

@@ -37,32 +37,32 @@ const AchievementsSection = () => {
           Our <span>Achievements</span>
         </SectionTitle>
         <StatsContainer>
-          <StatCard isVisible={isVisible}>
+          <StatCard $isVisible={isVisible}>
             <IconWrapper>
               <FaCar />
             </IconWrapper>
-            <AnimatedNumber end={1000000} suffix="+" isVisible={isVisible} />
+            <AnimatedNumber end={1000000} suffix="+" $isVisible={isVisible} />
             <StatLabel>Rides Completed</StatLabel>
           </StatCard>
-          <StatCard isVisible={isVisible}>
+          <StatCard $isVisible={isVisible}>
             <IconWrapper>
               <FaUsers />
             </IconWrapper>
-            <AnimatedNumber end={500000} suffix="+" isVisible={isVisible} />
+            <AnimatedNumber end={500000} suffix="+" $isVisible={isVisible} />
             <StatLabel>Satisfied Customers</StatLabel>
           </StatCard>
-          <StatCard isVisible={isVisible}>
+          <StatCard $isVisible={isVisible}>
             <IconWrapper>
               <FaCity />
             </IconWrapper>
-            <AnimatedNumber end={50} suffix="+" isVisible={isVisible} />
+            <AnimatedNumber end={50} suffix="+" $isVisible={isVisible} />
             <StatLabel>Cities Covered</StatLabel>
           </StatCard>
-          <StatCard isVisible={isVisible}>
+          <StatCard $isVisible={isVisible}>
             <IconWrapper>
               <FaCalendarAlt />
             </IconWrapper>
-            <AnimatedNumber end={5} suffix="+" isVisible={isVisible} />
+            <AnimatedNumber end={5} suffix="+" $isVisible={isVisible} />
             <StatLabel>Years of Operation</StatLabel>
           </StatCard>
         </StatsContainer>
@@ -71,11 +71,11 @@ const AchievementsSection = () => {
   );
 };
 
-const AnimatedNumber = ({ end, suffix, isVisible }) => {
+const AnimatedNumber = ({ end, suffix, $isVisible }) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    if (isVisible) {
+    if ($isVisible) {
       let start = 0;
       const duration = 2000;
       const increment = end / (duration / 10);
@@ -89,7 +89,7 @@ const AnimatedNumber = ({ end, suffix, isVisible }) => {
       }, 10);
       return () => clearInterval(timer);
     }
-  }, [end, isVisible]);
+  }, [end, $isVisible]);
 
   return (
     <StatNumber>
@@ -105,6 +105,14 @@ const AchievementsContainer = styled.section`
   text-align: center;
   display: flex;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    padding: 36px 20px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 36px 20px;
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -119,6 +127,14 @@ const SectionTitle = styled.h2`
   font-weight: bold;
   span {
     color: #f9c935;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2rem;
   }
 `;
 

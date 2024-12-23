@@ -1,5 +1,5 @@
 import { AchievementsSection } from "./components/AchievementsSection"
-import BannerSection from "./components/BannerSection"
+import BannerSection from "../../components/BannerSection"
 import { ComingSoonSection } from "./components/ComingSoonSection"
 import { CTASection } from "./components/CTASection"
 import { DownloadAppSection } from "./components/DownloadAppSection"

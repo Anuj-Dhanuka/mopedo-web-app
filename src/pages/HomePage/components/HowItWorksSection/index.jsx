@@ -42,11 +42,19 @@ const HowItWorksSection = () => {
 };
 
 const HowItWorksContainer = styled.section`
-  padding: 60px 20px;
+  padding: 80px 20px;
   background-color: #f9fafc;
   text-align: center;
   display: flex;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    padding: 36px 20px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 36px 20px;
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -61,6 +69,14 @@ const SectionTitle = styled.h2`
   font-weight: bold;
   span {
     color: #f9c935;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2rem;
   }
 `;
 
