@@ -62,6 +62,9 @@ const ContactContainer = styled.section`
   margin-top: 10vh;
   padding: 80px 20px;
   background: #f9fafc; /* Updated Background Color */
+  text-align: center;
+  display: flex;
+  justify-content: center;
 
   @media (max-width: 768px) {
     padding: 36px 20px;
