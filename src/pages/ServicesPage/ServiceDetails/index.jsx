@@ -49,9 +49,7 @@ const ServiceDetails = () => {
 
         {/* Food Delivery Service */}
         <ServiceRow >
-          <ServiceImage>
-            <img src={foodDehliveryServiceImage} alt="Food Delivery" />
-          </ServiceImage>
+          
           <ServiceContent>
             <h3>🍔 Food Delivery</h3>
             <p>
@@ -82,6 +80,9 @@ const ServiceDetails = () => {
               deliver happiness, one meal at a time!
             </p>
           </ServiceContent>
+          <ServiceImage>
+            <img src={foodDehliveryServiceImage} alt="Food Delivery" />
+          </ServiceImage>
         </ServiceRow>
 
         {/* Goods Delivery Service */}
@@ -164,7 +165,13 @@ const ServiceRow = styled.div`
     flex-direction: column;
     gap: 20px;
     margin-top: 24px;
+
+    &:nth-child(2) {
+      flex-direction: column-reverse; /* Image first for the second row */
+    }
   }
+
+  
 `;
 
 const ServiceContent = styled.div`
@@ -228,5 +235,8 @@ const ServiceImage = styled.div`
     object-fit: cover;
   }
 `;
+
+
+
 
 export default ServiceDetails;

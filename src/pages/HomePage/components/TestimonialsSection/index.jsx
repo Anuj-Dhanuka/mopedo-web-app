@@ -119,12 +119,7 @@ const StyledSlider = styled(Slider)`
   }
 
   .slick-dots {
-    bottom: -24px;
-
-    @media (max-width: 768px) {
-      bottom: -40px;
-    
-    }
+    bottom: -40px;
 
     li button:before {
       font-size: 12px;

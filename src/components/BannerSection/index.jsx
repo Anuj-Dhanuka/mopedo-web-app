@@ -13,7 +13,7 @@ const BannerSection = ({ heading }) => {
 const Banner = styled.div`
   height: 100vh; /* Full viewport height */
   background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url(${bannerImage}) no-repeat center center;
+    url(${bannerImage}) no-repeat center center fixed;
   background-size: cover; /* Ensures the image covers the whole area */
   display: flex;
   align-items: center;
