@@ -81,7 +81,7 @@ const Footer = () => {
           </Block>
         </BlocksContainer>
         <RightReserved>
-          &copy; {new Date().getFullYear()} Mopedo. All rights reserved.
+          &copy; {new Date().getFullYear()} created by Anuj Dhanuka for his portfolio website. All rights reserved.
         </RightReserved>
       </FooterInnerContainer>
     </FooterContainer>
