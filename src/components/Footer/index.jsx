@@ -6,7 +6,6 @@ import { FaFacebookF, FaInstagram, FaXTwitter, FaYoutube } from "react-icons/fa6
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    
   };
   return (
     <FooterContainer>
