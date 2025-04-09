@@ -7,7 +7,7 @@ const HomePageHeroSection = () => {
     <HeroSection>
       <HeroContent>
         <LeftContainer>
-          <HeroTitle>Welcome to India</HeroTitle>
+          <HeroTitle>Welcome to Mopedo</HeroTitle>
           <HeroSubtitle>
             Swiftly evolving <span>Bike-Taxi service</span> integrated with
             advanced
