@@ -110,7 +110,7 @@ const HeroContent = styled.div`
 
 const LeftContainer = styled.div`
   width: 50%;
-  padding: 20px;
+  // padding: 20px;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -231,8 +231,9 @@ const RightContainer = styled.div`
 const RightInnerContainer = styled.div`
   position: absolute;
   top: 50%;
-  right: 0;
+  right: -10%;
   transform: translate(0%, -50%);
+  
 
   @media (max-width: 768px) {
     position: relative;
@@ -247,11 +248,15 @@ const RightImageContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+  
+  
 `;
 
 const StyledIcon = styled(FaLocationPin)`
   width: 400px; /* Default size */
   height: auto;
+  
+  
 
   @media (max-width: 768px) {
     width: 300px; /* Smaller size for tablets */
@@ -267,6 +272,7 @@ const BikeImageContainer = styled.div`
   bottom: 0%;
   left: 50%;
   transform: translate(-50%, 0%);
+  
 
   @media (max-width: 768px) {
     width: 50%;

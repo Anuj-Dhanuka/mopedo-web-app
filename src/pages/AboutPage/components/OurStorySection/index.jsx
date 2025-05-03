@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import authorImage from "../../../../assets/images/dhanush.jpg";
+import authorImage from "../../../../assets/images/anuj_pic.png";
 
 const OurStorySection = () => {
   return (
@@ -8,9 +8,9 @@ const OurStorySection = () => {
         <SectionTitle>📖 Our <span>Story</span></SectionTitle>
         <StoryContent>
           <AuthorSection>
-            <AuthorImage src={authorImage} alt="Dhanush K, Founder & CEO" />
+            <AuthorImage src={authorImage} alt="Anuj Dhanuka, Founder & CEO" />
             <AuthorInfo>
-              <AuthorName>Dhanush K</AuthorName>
+              <AuthorName>Anuj Dhanuka</AuthorName>
               <AuthorRole>Founder & CEO</AuthorRole>
               <AuthorDate>Monday, 20 June, 2022</AuthorDate>
             </AuthorInfo>
